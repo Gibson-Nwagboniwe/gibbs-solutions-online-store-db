@@ -1,103 +1,112 @@
-# GIBBS SOLUTIONS: Cloud Retail Database Project
+# GIBBS SOLUTIONS - Online Store Database Project
 
-A fictional cloud-based PostgreSQL database for **GIBBS SOLUTIONS**, an online retail company specializing in computers and gadgets. This project simulates a real-world sales and inventory system built for data analysis and reporting.
+A cloud-based PostgreSQL database system built for a fictional retail company called **GIBBS SOLUTIONS**. This company specializes in selling computers, gadgets, and related accessories.
+
+This project demonstrates my skills as an entry-level Database Administrator, showcasing real-world tasks like schema design, data insertion, query development, and analysis.
 
 ---
 
-## 🛠️ Tech Stack
+## 📈 Features
+- PostgreSQL relational database design
+- SQL schema creation using DDL
+- Data population with realistic mock data (150+ records)
+- Analytical queries and reports
+- Clean folder organization and GitHub versioning
 
-- PostgreSQL
-- SQL (DDL & DML)
-- Linux (VMware)
+---
+
+## 🧱 Technologies Used
+- PostgreSQL 15
+- SQL (DDL, DML, Joins, Aggregates)
+- Linux (VMware environment)
 - Git & GitHub
-- Entity Relationship Diagrams (ERD)
 
 ---
 
-## 🗂️ Project Structure
-
-
-gibbs-solutions-online-store-db/ ├── schema/ │ ├── create_tables.sql # SQL to create all tables │ ├── insert_sample_data.sql # Inserts ~150 rows of sample data │ └── sample_queries.sql # Business intelligence SQL queries ├── ERD.png # Entity Relationship Diagram └── README.md # Project documentation.
-
+## 📄 Project Structure
+```bash
+gibbs-solutions-online-store-db/
+├── README.md
+├── USE_CASE.md
+├── schema/
+│   └── create_tables.sql
+├── data/
+│   └── insert_sample_data.sql
+├── queries/
+│   └── sample_reports.sql
+├── images/
+│   └── ERD.png
+```
 
 ---
 
-## 💼 What This Database Can Do
+## 📚 Database Schema Overview
+The system consists of six main tables:
+- `suppliers`
+- `products`
+- `customers`
+- `employees`
+- `sales`
+- `sale_items`
 
-- Record and manage sales transactions
-- Track product inventory and supplier info
-- Analyze top-selling products and low-stock items
-- Report on employee sales performance
-- Identify high-value customers and trends
+Each table is normalized and connected with proper foreign key constraints.
+
+### 🔍 ERD
+![ERD Diagram](images/ERD.png)
 
 ---
 
-## ⚙️ How to Set Up the Database
+## 👨‍💼 Use Case
+For a detailed breakdown of how the system works, including query results and insights:
+> 📄 [USE_CASE.md](USE_CASE.md)
 
-### 1. Clone the Repository
+---
+
+## 📕 Setup Instructions
+1. Clone the repository:
 ```bash
 git clone https://github.com/Gibson-Nwagboniwe/gibbs-solutions-online-store-db.git
 cd gibbs-solutions-online-store-db
+```
 
+2. Run the schema file to create tables:
+```bash
+psql -U postgres -d your_database_name -f schema/create_tables.sql
+```
 
-2. Create the Database
+3. Populate the database:
+```bash
+psql -U postgres -d your_database_name -f data/insert_sample_data.sql
+```
 
-CREATE DATABASE gibbs_store;
-
-
-3. Run the Schema & Sample Data
-
-psql -U postgres -d gibbs_store -f schema/create_tables.sql
-psql -U postgres -d gibbs_store -f schema/insert_sample_data.sql
-
-
-
-4. Run the Sample Reports
-
-psql -U postgres -d gibbs_store -f schema/sample_queries.sql
-
-
-
-📊 Sample Business Queries
-Here are some SQL queries included in this project:
-
-Top 5 Best-Selling Products
-
-Monthly Sales Summary
-
-Top 5 Customers by Spending
-
-Low Stock Product Alerts
-
-Sales by Employee
-
-These queries showcase real-world database reporting and can be customized for various insights.
-
-🌟 Features
-✅ Well-structured ERD
-✅ Normalized relational schema
-✅ Realistic business simulation
-✅ 150+ rows of sample data
-✅ Insightful SQL queries for analytics
-
-🤝 Author
-Gibson Nwagboniwe – Entry-Level Database Administrator
-🔗 GitHub
-
-📌 Note
-This project is purely educational and intended to demonstrate SQL and data modeling skills in a real-world retail scenario.
-
-
-
-
+4. Run analysis queries:
+```bash
+psql -U postgres -d your_database_name -f queries/sample_reports.sql
+```
 
 ---
 
-## ✅ Next Steps
-1. Copy the above into your `README.md` file (you can use `nano README.md` or any code editor).
-2. Commit and push it to GitHub:
-```bash
-git add README.md
-git commit -m "Add project README"
-git push origin main
+## 🌟 What I Learned
+- How to design and normalize a relational schema
+- Writing effective analytical SQL queries
+- Using PostgreSQL on a Linux server
+- Structuring a professional GitHub project
+
+---
+
+## 📊 Future Improvements
+- Add indexes for performance tuning
+- Create stored procedures and views
+- Integrate a front-end dashboard (e.g. Metabase)
+- Add triggers for stock notifications
+
+---
+
+## 🙌 Credits
+This project was built as a portfolio piece to showcase my skills in database administration.
+Feel free to explore, clone, and adapt it for learning purposes.
+
+---
+
+**GitHub:** [Gibson-Nwagboniwe](https://github.com/Gibson-Nwagboniwe)
 
